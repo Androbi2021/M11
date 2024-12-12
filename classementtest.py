@@ -2,7 +2,6 @@ import unittest
 import random
 from classement_ordered import Classement
 from coureur    import Coureur
-from classement import Classement
 from temps      import Temps
 from resultat   import Resultat
 
@@ -49,12 +48,8 @@ class ClassementTest(unittest.TestCase):
         self.assertEqual(self.cl.get_position(self.c2), 1, "La méthode get_position de classement ne retourne pas la bonne position")
 
     def test_remove(self):
-        c1 = coureurs[0]
-        t = Temps(1,2,3)
-        r1 = Resultat(c1, t)
-        cl = Classement([r1])
-        cl.remove(c1)
-        self.assertEqual(cl.size(), 0, "La méthode remove de classement ne retire pas correctement le coureur")
+        self.cl.remove(self.c1)
+        self.assertEqual(self.cl.size(), 1, "La méthode remove de classement ne retire pas correctement le coureur")
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

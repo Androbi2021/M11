@@ -14,7 +14,7 @@ class OrderedLinkedList :
         self.__length = 0          # current length of the linked list
         self.__head = None         # pointer to the first node in the list
         self.__last = None         # pointer to the last node in the list
-        lst.reverse()              # reverse to ensure elements will appear in same order
+        lst.sort()              # reverse to ensure elements will appear in same order
         for e in lst :             # add elements of input list lst one by one 
             self.add(e)
             
